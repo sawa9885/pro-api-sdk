@@ -51,6 +51,9 @@ function fixUuid(uuid?: string): string {
  * 主逻辑方法
  */
 function main() {
+	const outputDir = path.join(__dirname, 'dist');
+	fs.emptyDirSync(outputDir);
+
 	if (!testUuid(extensionConfig.uuid)) {
 		const newExtensionConfig = { ...extensionConfig };
 		// @ts-expect-error - Removing default property from extension config
@@ -88,7 +91,7 @@ function main() {
 	}
 
 	zip.generateNodeStream({ type: 'nodebuffer', streamFiles: true, compression: 'DEFLATE', compressionOptions: { level: 9 } }).pipe(
-		fs.createWriteStream(path.join(__dirname, 'dist', `${extensionConfig.name}_v${extensionConfig.version}.eext`)),
+		fs.createWriteStream(path.join(outputDir, `${extensionConfig.name}_v${extensionConfig.version}.eext`)),
 	);
 }
 

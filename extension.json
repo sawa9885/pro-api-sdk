@@ -1,10 +1,10 @@
 {
-	"name": "your-extension-name",
-	"uuid": "",
-	"displayName": "你的扩展名称/Your Extension Name",
-	"description": "",
-	"version": "1.0.0",
-	"publisher": "",
+	"name": "better-export",
+	"uuid": "81be48a8e88e685bd2715a407e373cb6",
+	"displayName": "BetterExport",
+	"description": "Export PCB colorful silkscreen image primitive metadata and blob references for Blender/OBJ texture workflows.",
+	"version": "1.0.56",
+	"publisher": "BioSensorSolutions",
 	"engines": {
 		"eda": "^3.0.0"
 	},
@@ -15,52 +15,29 @@
 	},
 	"categories": "Other",
 	"keywords": [
-		"Tool"
+		"PCB",
+		"OBJ",
+		"Texture",
+		"Silkscreen"
 	],
 	"images": {
 		"logo": "./images/logo.png"
 	},
-	"homepage": "",
+	"homepage": "https://github.com/easyeda/pro-api-sdk",
 	"bugs": "",
 	"activationEvents": {},
 	"entry": "./dist/index",
 	"dependentExtensions": {},
 	"headerMenus": {
-		"home": [
-			{
-				"id": "menuId",
-				"title": "Ext Menu",
-				"menuItems": [
-					{
-						"id": "About",
-						"title": "About...",
-						"registerFn": "about"
-					}
-				]
-			}
-		],
-		"sch": [
-			{
-				"id": "menuId",
-				"title": "Ext Menu",
-				"menuItems": [
-					{
-						"id": "About",
-						"title": "About...",
-						"registerFn": "about"
-					}
-				]
-			}
-		],
 		"pcb": [
 			{
-				"id": "menuId",
-				"title": "Ext Menu",
+				"id": "betterExport",
+				"title": "BetterExport",
 				"menuItems": [
 					{
-						"id": "About",
-						"title": "About...",
-						"registerFn": "about"
+						"id": "ExportTexturedObj",
+						"title": "Export Textured OBJ + MTL",
+						"registerFn": "exportTexturedObj"
 					}
 				]
 			}
